@@ -1,7 +1,8 @@
 from random import choice
+exit_command = 'exit'
 
 
-def get_weather_bot_response(user_input):
+def get_weather_bot_response(user):
     bot_response_sunny = ['Wear some sunglasses. ',
                           'Going to the pool would be nice today. ']
     bot_response_rainy = ['Better get an umbrella. ',
@@ -13,15 +14,28 @@ def get_weather_bot_response(user_input):
     bot_response_snowy = ['It would be nice to snowboard or ski. ',
                           'Snowball fights are always fun. ', 'Hot coco on snowy days is nice. ']
 
-    if user_input == 'sunny':
+    if user == 'sunny':
         return choice(bot_response_sunny)
-    elif user_input == 'rainy':
+    elif user == 'rainy':
         return choice(bot_response_rainy)
-    elif user_input == 'smokey':
+    elif user == 'smokey':
         return choice(bot_response_smokey)
-    elif user_input == 'foggy':
+    elif user == 'foggy':
         return choice(bot_response_foggy)
-    elif user_input == 'snowy':
+    elif user == 'snowy':
         return choice(bot_response_snowy)
     else:
         return('I dont have this weather in my database')
+
+
+print('Hello, Im Weather Bot')
+
+while True:
+    user_input = input('Enter the weather: ')
+    user = user_input.lower()
+
+    if user == exit_command:
+        break
+
+    response = get_weather_bot_response(user)
+    print(response)
