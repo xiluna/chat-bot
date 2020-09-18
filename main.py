@@ -6,7 +6,7 @@ exit_command = 'exit'
 def get_weather_bot_response(user):
     bot_responses = {
         'sunny': ['Wear some sunglasses. ',
-                  'Going to the pool would be nice today. '],
+                  'Going to the pool would be nice today. ', 'Its really hot. '],
 
         'rainy': ['Better get an umbrella. ',
                   'You should stay inside. ', 'Dont get cold you might get sick. '],
